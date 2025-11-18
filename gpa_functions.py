@@ -10,8 +10,9 @@ def add(students,id,name,gpa,semester):
     #adds a student to the dictionary, with their id being the key, and the value being another dictionary with atributes of the student within
     students[id] = {"name":name,"gpa":gpa,"semester":semester}
 
-def remove():
-    pass
+def remove(students,id):
+    #removes a students dictionary entry, using their id to locate their info
+    students.pop(id)
 
 def edit_name():
     pass
@@ -39,5 +40,11 @@ def run_add(students):
         choice = input("Do you want to add a new student?y(yes)/n(no)\n").lower()
 
 
-def run_remove():
-    pass
+def run_remove(students):
+    choice = "y"
+    while choice == "y" or choice == "yes":
+        print("Enter id of the student that you want to remove from the students' registry.")
+        id = input("id:\n")
+        remove(students, id)
+        print("Student removed")
+        choice = input("Do you want to remove more students?y(yes)/n(no)\n").lower()
