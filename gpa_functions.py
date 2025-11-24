@@ -14,8 +14,9 @@ def remove(students,id):
     #removes a students dictionary entry, using their id to locate their info
     students.pop(id)
 
-def edit_name():
-    pass
+def edit_name(students,id,new_name):
+    #edits a students name within the nested dictoinary
+    students[id]["name"] = new_name
 
 def search():
     pass
@@ -23,8 +24,17 @@ def search():
 def run_search():
     pass
 
-def run_edit():
-    pass
+def run_edit(students):
+    id = input("Enter the id of the student. Enter -1 to return to the previous menu\n")
+    if id == -1:
+        return
+    else:
+        new_name = input("Enter the new name of the student\n")
+        edit_name(students,id,new_name)
+        print("Student name modified for the student with id",id)
+        print("Student's new name is",new_name)
+        
+
 
 def run_add(students):
     choice = "y"
