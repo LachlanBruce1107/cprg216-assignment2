@@ -4,7 +4,7 @@ def show_menu():
     print("-Edit a student's info using student ID? enter 2")
     print("-Add a new student? enter 3")
     print("-Remove a student? enter 4")
-    return input()
+    return int(input())
 
 def add(students,id,name,gpa,semester):
     #adds a student to the dictionary, with their id being the key, and the value being another dictionary with atributes of the student within
@@ -22,7 +22,7 @@ def search():
     pass
 
 def run_search():
-    pass
+    pass         
 
 def run_edit(students):
     id = input("Enter the id of the student. Enter -1 to return to the previous menu\n")
