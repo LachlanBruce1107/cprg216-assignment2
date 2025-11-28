@@ -18,11 +18,22 @@ def edit_name(students,id,new_name):
     #edits a students name within the nested dictoinary
     students[id]["name"] = new_name
 
-def search():
-    pass
+def search(students, id):
+    name = students[id]["name"]
+    gpa = students[id]["gpa"]
+    student_info = str(id + '   ' + name + '   ' + gpa)
+    return student_info
 
-def run_search():
-    pass         
+def run_search(students):
+    choice = 'y'
+    while choice == "y" or choice == "yes":
+        id = str(input('Enter the id of the student. Enter -1 to return to the previous menu \n'))
+        if id == -1:
+            return
+        else:
+            student_info = search(students, id)
+            print('Student found')
+            print(student_info)
 
 def run_edit(students):
     id = input("Enter the id of the student. Enter -1 to return to the previous menu\n")
@@ -33,8 +44,6 @@ def run_edit(students):
         edit_name(students,id,new_name)
         print("Student name modified for the student with id",id)
         print("Student's new name is",new_name)
-        
-
 
 def run_add(students):
     choice = "y"
