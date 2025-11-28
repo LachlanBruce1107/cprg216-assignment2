@@ -28,7 +28,7 @@ def run_search(students):
     choice = 'y'
     while choice == "y" or choice == "yes":
         id = str(input('Enter the id of the student. Enter -1 to return to the previous menu \n'))
-        if id == -1:
+        if id == '-1':
             return
         else:
             student_info = search(students, id)
@@ -36,14 +36,16 @@ def run_search(students):
             print(student_info)
 
 def run_edit(students):
-    id = input("Enter the id of the student. Enter -1 to return to the previous menu\n")
-    if id == -1:
-        return
-    else:
+    id = str(input("Enter the id of the student. Enter -1 to return to the previous menu\n"))
+    while id != '-1':
         new_name = input("Enter the new name of the student\n")
         edit_name(students,id,new_name)
         print("Student name modified for the student with id",id)
         print("Student's new name is",new_name)
+        id = str(input("Enter the id of the student. Enter -1 to return to the previous menu\n"))
+
+    else:
+        return
 
 def run_add(students):
     choice = "y"

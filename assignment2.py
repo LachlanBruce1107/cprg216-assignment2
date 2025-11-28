@@ -2,6 +2,7 @@ from gpa_functions import *
 
 students = dict()
 
+print('Welcome to the students record program')
 choice = 'y'
 while choice == 'y' or choice == 'yes':
     option = show_menu()
